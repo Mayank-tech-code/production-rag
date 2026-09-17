@@ -1,0 +1,101 @@
+New Phases Based on Architecture 
+
+
+pip install -r requirements.txt
+
+
+
+1. Create a Virtual ENV 
+	python -m venv .venv --without-pip  --------- it will create a venv folder under project root 
+
+2. Verify it was created 
+	Test-Path .venv\Scripts\python.exe ======== True
+
+3.Test-Path .venv\Scripts\Activate.ps1
+	Expected -------- True
+
+4.Activate the environment
+	.\.venv\Scripts\Activate.ps1
+	(.venv) PS C:\Users\ASUS\Desktop\Enterprise RAG\new-project>
+	The important part is: (.venv)
+
+5.Install pip
+	Because we created the environment using --without-pip, run:
+	python -m ensurepip --upgrade
+	Then: python -m pip install --upgrade pip
+6. Verify
+ 	Run:	python --version
+	Expected: Python 3.11.9
+	Then:	python -m pip --version
+	It should point somewhere inside:
+	...\new-project\.venv\Lib\site-packages\pip
+	Finally:
+	where.exe python
+	The first result should be:
+	C:\...\new-project\.venv\Scripts\python.exe
+
+
+
+From this point onward
+
+Whenever you open this project again:
+
+.\.venv\Scripts\Activate.ps1
+
+
+PHASE 0
+Project Foundation
+        ↓
+PHASE 1
+Basic RAG
+        ↓
+PHASE 2
+Production Document Ingestion
+        ↓
+PHASE 3
+Advanced Chunking
+        ↓
+PHASE 4
+Embedding + Vector Storage
+        ↓
+PHASE 5
+Basic Retrieval
+        ↓
+PHASE 6
+Hybrid Search
+        ↓
+PHASE 7
+Reranking
+        ↓
+PHASE 8
+Query Understanding
+        ↓
+PHASE 9
+Context Optimization
+        ↓
+PHASE 10
+Generation + Citations
+        ↓
+PHASE 11
+Evaluation
+        ↓
+PHASE 12
+Observability
+        ↓
+PHASE 13
+Security + Authorization
+        ↓
+PHASE 14
+FastAPI Production Backend
+        ↓
+PHASE 15
+React + TypeScript UI
+        ↓
+PHASE 16
+Docker + Deployment
+        ↓
+PHASE 17
+Advanced RAG
+        ↓
+PHASE 18
+Production Optimization

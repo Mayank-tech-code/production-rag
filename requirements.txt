@@ -1,0 +1,14 @@
+langchain
+langchain-community
+langchain-huggingface
+sentence-transformers
+qdrant-client
+pymupdf
+python-dotenv
+fastapi
+uvicorn
+langchain-qdrant
+rank-bm25
+
+
+AI-focused Full-Stack Software Engineer with 3+ years of enterprise software development experience at Ernst & Young, specializing in React.js, TypeScript, Node.js, REST APIs and scalable application workflows. Hands-on experience developing AI-powered applications using Python, FastAPI, LangChain and LangGraph, with practical experience across the LLM application lifecycle including RAG, document ingestion, chunking, embeddings, vector databases, semantic search, hybrid retrieval, reranking, context optimization, prompt engineering, evaluation and guardrails. Experienced in building AI agents, tool-enabled workflows and multi-agent systems, integrating LLMs with APIs, retrieval services and application workflows. Familiar with MCP, AI observability, CI/CD, Docker and cloud-based application deployment, with a focus on building reliable, maintainable and production-oriented AI applications.
