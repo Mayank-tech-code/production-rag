@@ -1,17 +1,16 @@
-from app.config.settings import (
-    LLM_PROVIDER,
-    QDRANT_URL,
-    QDRANT_COLLECTION,
+from fastapi import FastAPI
+
+from app.api.routes import router
+
+
+app = FastAPI(
+    title="Production RAG API",
+    description="Production-oriented Retrieval-Augmented Generation API",
+    version="0.1.0",
 )
 
 
-def main():
-    print("Production RAG Application")
-    print("---------------------------")
-    print(f"LLM Provider: {LLM_PROVIDER}")
-    print(f"Qdrant URL: {QDRANT_URL}")
-    print(f"Collection: {QDRANT_COLLECTION}")
-
-
-if __name__ == "__main__":
-    main()
+app.include_router(
+    router,
+    prefix="/api/v1",
+)
