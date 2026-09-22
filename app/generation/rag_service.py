@@ -9,15 +9,15 @@ class RAGService:
         self.retrieval_service = RetrievalService()
         self.llm_client = get_llm_client()
 
-    def answer(self, query: str) -> str:
+    def answer(self, query: str):
 
-        # 1. Retrieve relevant context
+        # 1. Retrieve relevant documents
         documents = self.retrieval_service.retrieve(query)
 
         # 2. Build prompt
         prompt = build_prompt(
             query=query,
-            documents=documents,
+            documents=documents
         )
 
         # 3. Generate answer
@@ -25,11 +25,42 @@ class RAGService:
             messages=[
                 {
                     "role": "user",
-                    "content": prompt,
+                    "content": prompt
                 }
             ],
             max_tokens=512,
             temperature=0.1,
         )
 
-        return response.choices[0].message.content
+        answer = response.choices[0].message.content
+
+        # 4. Build citation metadata
+        sources = []
+
+        for document in documents:
+
+            source = document.metadata.get(
+                "source",
+                "Unknown"
+            )
+
+            page = document.metadata.get(
+                "page",
+                None
+            )
+
+            if page is not None:
+                page = int(page) + 1
+
+            citation = {
+                "source": source,
+                "page": page
+            }
+
+            if citation not in sources:
+                sources.append(citation)
+
+        return {
+            "answer": answer,
+            "sources": sources
+        }

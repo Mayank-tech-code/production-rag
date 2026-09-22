@@ -12,7 +12,8 @@ Rules:
 3. If the answer cannot be found in the context, say:
    "I don't have enough information in the provided documents."
 4. Keep the answer clear and concise.
-5. When possible, mention the source of the information.
+5. Do not mention sources, filenames, page numbers, or citations in the answer.
+6. Source information is provided separately by the application.
 """
 
 
