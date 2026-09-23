@@ -1,7 +1,7 @@
 langchain
 langchain-community
 langchain-huggingface
-fastembed
+sentence-transformers
 qdrant-client
 pymupdf
 python-dotenv
