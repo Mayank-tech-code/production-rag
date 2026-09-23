@@ -1,6 +1,7 @@
 from app.retrieval.retrieval_service import RetrievalService
 from app.generation.prompt import build_prompt
 from app.generation.llm import get_llm_client
+import os
 
 
 class RAGService:
@@ -43,6 +44,9 @@ class RAGService:
                 "source",
                 "Unknown"
             )
+
+            source = source.replace("\\", "/")
+            source = os.path.basename(source)
 
             page = document.metadata.get(
                 "page",
